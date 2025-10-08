@@ -1,0 +1,102 @@
+Vilímkova Analytics CSS Dokumentace
+Přehled
+Tato dokumentace popisuje CSS architekturu dashboardu Vilímkova Analytics. Architektura používá BEM metodologii, modulární strukturu a CSS custom properties pro snadné přepínání témat a škálovatelnost.
+
+Struktura složek
+text
+css/
+├── base/               # Reset, typografie, základní utility
+│   ├── reset.css
+│   ├── typography.css
+│   └── utilities.css
+├── components/         # Samostatné UI komponenty 
+│   ├── button.css
+│   ├── modal.css
+│   ├── stat-card.css
+│   └── chart-section.css
+├── layout/             # Layoutové komponenty
+│   ├── grid.css
+│   ├── header.css
+│   └── sidebar.css
+├── themes/             # Barevná témata a design tokeny
+│   ├── tokens.css
+│   ├── light.css
+│   └── dark.css
+└── vendor/             # Externí knihovny/styly
+    └── normalize.css
+Naming Conventions (BEM)
+Blok: .stat-card, .button, .modal-container
+
+Element: .stat-card__value, .button__icon, .modal-container__form
+
+Modifikátor: .stat-card--danger, .button--primary, .modal-container--open
+
+Stavy: .is-active, .is-disabled, .has-error
+
+Utility: .u-hidden, .p-4, .font-semibold
+
+Komponenty
+Stat Card
+Účel: Zobrazit klíčové statistiky s hodnotou, jednotkou a stavovým oznámením.
+
+xml
+<div class="stat-card stat-card--danger" tabindex="0">
+  <div class="stat-card__spinner" aria-hidden="true"></div>
+  <h3 class="stat-card__title">Aktivní upozornění</h3>
+  <div class="stat-card__value" aria-live="polite">3</div>
+  <div class="stat-card__unit">ks</div>
+  <span class="stat-card__change stat-card__change--danger">2 nová dnes</span>
+</div>
+Varianty:
+
+.stat-card--danger — červené zvýraznění varování
+
+.stat-card--normal — standardní vzhled
+
+Button
+Tlačítko s variantami a stavy.
+
+xml
+<button class="btn btn--primary btn--sm" type="button">
+  <span class="btn__icon btn__icon--left">🔍</span>
+  Hledat
+</button>
+Varianty:
+
+.btn--primary — hlavní tlačítko
+
+.btn--secondary — sekundární
+
+.btn--warning — varování
+
+.btn--loading — načítací stav
+
+Stavy:
+
+.btn:disabled, [aria-disabled="true"] — neaktivní tlačítko
+
+Modal
+Modální okno pro nahlášení problému.
+
+xml
+<div class="modal-container" id="report-issue" aria-hidden="true">
+  <a href="#" class="modal-container__background"></a>
+  <form class="modal-container__form" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <a href="#" class="modal-container__close-btn" aria-label="Zavřít">&times;</a>
+    <h2 id="modal-title">Nahlásit problém</h2>
+    <!-- formulářové prvky -->
+  </form>
+</div>
+Proměnné a témata
+Barevná paleta a typografické škály definované v :root:
+
+Barvy:
+--blue-600, --green-500, --red-500, --yellow-500
+
+Spacing:
+--spacing-1 až --spacing-24
+
+Fonty a velikosti:
+--font-primary, --font-size-base, --font-weight-semibold
+
+Tmavý režim je řízen atributem checkboxu a mění proměnné na tmavší kontrastní paletu.

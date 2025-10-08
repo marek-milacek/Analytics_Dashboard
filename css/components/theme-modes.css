@@ -1,0 +1,87 @@
+.theme-switcher {
+    cursor: pointer;
+    margin: var(--spacing-2);
+    padding: 10px;
+    color: var(--text-light);
+    border-radius: 10px;
+    display: inline-block;
+    background-color: var(--blue-500);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+.dark-mode-background {
+    background-color: var(--blue-600);
+}
+
+@media (hover: hover) {
+    .theme-switcher:hover {
+        background-color: var(--blue-800);
+        transition: 0.3s ease;
+    }
+}
+
+.theme-switcher:active {
+    transform: translateY(3px);
+    transition: all 0.1s ease;
+}
+
+.theme-switcher::before {
+    content: "[🌙 Tmavý režim]";
+}
+
+#dark-mode-toggle:checked+.theme-switcher::before {
+    content: "[☀️ Světlý režim]";
+}
+
+#dark-mode-toggle:checked~.grid-layout {
+    background-color: var(--text-dark);
+}
+
+#dark-mode-toggle:checked~.grid-layout .stat-card,
+#dark-mode-toggle:checked~.grid-layout .stat-card-danger,
+#dark-mode-toggle:checked~.grid-layout .chart-section .bar-chart,
+#dark-mode-toggle:checked~.grid-layout .progress-ring-section,
+#dark-mode-toggle:checked~.grid-layout .progress-ring-section .progress-ring-pozadi,
+#dark-mode-toggle:checked~.grid-layout .graf-section,
+#dark-mode-toggle:checked~.grid-layout .heatmap-section,
+#dark-mode-toggle:checked~.grid-layout .activity-feed,
+#dark-mode-toggle:checked~.grid-layout .table-section,
+#dark-mode-toggle:checked~.modal-container .problem-formular,
+#dark-mode-toggle:checked~.grid-layout .table-section .apartment-card {
+    background-color: var(--gray-400);
+}
+
+
+/* loading spinner */
+
+.theme-switcher {
+    position: relative;
+    transition: all 0.3s;
+}
+
+.theme-switcher:active::before {
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.theme-switcher:active::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

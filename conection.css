@@ -1,0 +1,34 @@
+/* Base */
+
+@import './css/base/reset.css';
+@import './css/base/typography.css';
+@import './css/base/gpu-acceleration.css';
+
+/* Components */
+
+@import './css/components/theme-modes.css';
+@import './css/components/cookies.css';
+@import './css/components/card.css';
+@import './css/components/chart-section.css';
+@import './css/components/progress-ring-section.css';
+@import './css/components/graf-section.css';
+@import './css/components/heatmap-section.css';
+@import './css/components/activity-feed-section.css';
+@import './css/components/table-section-filter.css';
+@import './css/components/table-section.css';
+@import './css/components/designed-buttons.css';
+@import './css/components/problem-feedback.css';
+@import './css/components/skeleton.css';
+@import './css/components/glass-efects.css';
+@import './css/components/freeze-objects.css';
+@import './css/components/tooltip.css';
+
+/* Layout */
+
+@import './css/layout/header.css';
+@import './css/layout/sidebar.css';
+@import './css/layout/footer.css';
+
+/*Grids*/
+
+@import './css/layout/grid-dashboard.css';

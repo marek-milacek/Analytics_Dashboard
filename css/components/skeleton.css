@@ -1,0 +1,62 @@
+@keyframes hide {
+    to {
+        opacity: 0; /* postupne se zpruhledni na 0 */
+        visibility: hidden; /*skryje element */
+    }
+}
+
+.skeleton-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--text-light);
+    z-index: 999999999999999999999999999999999999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    animation: hide 0.5s 2s forwards; /* animace se zpusti po 2 sekundach a bude trvat 0.5s */
+}
+
+.skeleton-line {
+    height: 400px;
+    background: var(--gray-300);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*animace nacteni */
+.skeleton-line::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* efekt pohybu */
+    background: linear-gradient(90deg, #f0f0f0, #e0e0e0, #f0f0f0);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); } /* Začátek - vlevo mimo */
+    100% { transform: translateX(100%); } /* Konec - vpravo mimo */
+}
+
+/* zobrazeni hlavniho obsahu */
+@keyframes show-content {
+    from { opacity: 0; } /* Zpočátku neviditelný */
+    to { opacity: 1; }   /* Postupné objevení */
+}
+
+.grid-container {
+    opacity: 0; /* Na začátku průhledný */
+    animation: show-content 0.5s 2.1s forwards;
+    /* Animace:
+       - trvá 0.5s
+       - začne 2.1s po načtení (0.1s po skeletonu)
+       - zachová výsledný stav */
+}

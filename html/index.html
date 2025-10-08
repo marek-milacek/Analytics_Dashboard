@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analýza vzdálených odečtů - Nastenka</title>
+    <link rel="stylesheet" href="/conection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/js.js"></script>
+    <meta name="description" content="Přehledový dashboard spotřeby vody s analytickými nástroji">
+</head>
+
+
+<body>
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" class="sidebar-roler" tabindex="0"></label>
+
+
+    <input type="checkbox" id="dark-mode-toggle">
+    <label for="dark-mode-toggle" class="theme-switcher" tabindex="10"></label>
+
+
+    <div class="skeleton-loading gpu-accelerated" aria-hidden="true">
+        <div class="skeleton-line" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+    </div>
+
+    <aside class="sidebar" aria-label="Hlavní navigace">
+        <nav class="navigation-sidebar" aria-label="Hlavni-menu">
+            <ul>
+                <li class="active">
+                    <a href="index.html" aria-current="page" tabindex="1">
+                        <span class="sidebar-icon" aria-hidden="true">📊</span>
+                        <span class="sidebar-text">Nástěnka</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="analytics.html" tabindex="2">
+                        <span class="sidebar-icon">📈</span>
+                        <span class="sidebar-text">Analytika</span>
+                    </a>
+                    <ol class="submenu">
+                        <li>
+                            <a href="#Consuption" tabindex="3">Spotřeba</a>
+                        </li>
+                        <li>
+                            <a href="#Effeciency" tabindex="4">Účinnost</a>
+                        </li>
+                        <li>
+                            <a href="#Trends" tabindex="5">Trendy</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="reports.html" tabindex="6">
+                        <span class="sidebar-icon">📋</span>
+                        <span class="sidebar-text">Zprávy</span>
+                    </a>
+                    <ol class="submenu">
+                        <li>
+                            <a href="#Monthly" tabindex="7">Měsíční</a>
+                        </li>
+                        <li>
+                            <a href="#Annual" tabindex="8">Každoročně</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="settings.html" tabindex="9">
+                        <span class="sidebar-icon">⚙️</span>
+                        <span class="sidebar-text">Nastavení</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+
+    <div class="grid-layout">
+
+
+        <header class="header" role="banner">
+            <div class="logo" aria-label="Analýza vzdálených odečtů  - hlavní logo">
+                Analýza vzdálených odečtů
+            </div>
+            <nav class="navigation" aria-label="Uživatelské menu">
+                <ul>
+                    <li class="navigation-user"><a href="users.html" tabindex="11">[Uživatel]</a></li>
+                    <li class="navigation-settings"><a href="settings.html" tabindex="12">[Nastavení]</a></li>
+                    <li class="navigation-help"><a href="help.html" tabindex="13">[Pomoc]</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main id="main-content" class="main" role="main">
+            <div class="stats-card__title">
+                <h2>Nástěnka - Přehled spotřeby</h2>
+            </div>
+
+
+            <section class="stats-row glass-card glass-effect-medium gpu-accelerated">
+                
+                <!-- Karta Celková spotřeba -->
+                <div class="stat-card glass-card glass-effect-subtle gpu-accelerated" tabindex="14">
+                    <div class="stat-card__spinner" aria-hidden="true"></div>
+                    <h3>Celková spotřeba</h3>
+                    <div class="stat-card__value data-number" aria-live="polite">2,847</div>
+                    <div class="stat-card__unit">m³</div>
+                    <span class="stat-card__change data-number">+12% vs předchozí měsíc</span>
+                </div>
+
+
+                <!-- Karta Efektivita -->
+                <div class="stat-card glass-card glass-effect-subtle gpu-accelerated" tabindex="15">
+                    <div class="stat-card__spinner"></div>
+                    <h3>Efektivita</h3>
+                    <div class="stat-card__value data-number">87%</div>
+                    <span class="stat-card__change data-number">Velmi dobrá</span>
+                </div>
+
+
+                <!-- Karta Aktivní upozornění -->
+                <div class="stat-card stat-card--danger glass-card glass-effect-subtle gpu-accelerated" tabindex="16">
+                    <div class="stat-card__spinner"></div>
+                    <h3>Aktivní upozornění</h3>
+                    <div class="stat-card__value data-number">3</div>
+                    <span class="stat-card__change stat-card__change--danger data-number">2 nová dnes</span>
+                </div>
+
+            </section>
+        </main>
+
+        <section class="graf-section glass-card glass-effect-medium" tabindex="19">
+            <div class="graf-nadpis">
+                Trend spotřeby
+            </div>
+            <div class="graf__position">
+                <!-- Sloupce grafu -->
+                <div class="leden-graf">
+                    <div class="graf-procenta">100%</div>
+                </div>
+                <div class="unor-graf">
+                    <div class="graf-procenta">30%</div>
+                </div>
+                <div class="brezen-graf">
+                    <div class="graf-procenta">40%</div>
+                </div>
+                <div class="duben-graf">
+                    <div class="graf-procenta">60%</div>
+                </div>
+                <div class="kveten-graf">
+                    <div class="graf-procenta">50%</div>
+                </div>
+                <div class="cerven-graf">
+                    <div class="graf-procenta">70%</div>
+                </div>
+                <div class="cervenec-graf">
+                    <div class="graf-procenta">80%</div>
+                </div>
+                <div class="srpen-graf">
+                    <div class="graf-procenta">80%</div>
+                </div>
+                <div class="zari-graf">
+                    <div class="graf-procenta">10%</div>
+                </div>
+                <div class="rijen-graf">
+                    <div class="graf-procenta">20%</div>
+                </div>
+                <div class="listopad-graf">
+                    <div class="graf-procenta">40%</div>
+                </div>
+                <div class="prosinec-graf">
+                    <div class="graf-procenta">90%</div>
+                </div>
+
+                <!-- Popisky měsíců -->
+                <div class="graf__sloupec__leden">
+                    <div class="graf__popisek">Leden</div>
+                </div>
+                <div class="graf__sloupec__unor">
+                    <div class="graf__popisek">Únor</div>
+                </div>
+                <div class="graf__sloupec__brezen">
+                    <div class="graf__popisek">Březen</div>
+                </div>
+                <div class="graf__sloupec__duben">
+                    <div class="graf__popisek">Duben</div>
+                </div>
+                <div class="graf__sloupec__kveten">
+                    <div class="graf__popisek">Květen</div>
+                </div>
+                <div class="graf__sloupec__cerven">
+                    <div class="graf__popisek">Červen</div>
+                </div>
+                <div class="graf__sloupec__cervenec">
+                    <div class="graf__popisek">Červenec</div>
+                </div>
+                <div class="graf__sloupec__srpen">
+                    <div class="graf__popisek">Srpen</div>
+                </div>
+                <div class="graf__sloupec__zari">
+                    <div class="graf__popisek">Září</div>
+                </div>
+                <div class="graf__sloupec__rijen">
+                    <div class="graf__popisek">Říjen</div>
+                </div>
+                <div class="graf__sloupec__listopad">
+                    <div class="graf__popisek">Listopad</div>
+                </div>
+                <div class="graf__sloupec__prosinec">
+                    <div class="graf__popisek">Prosinec</div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="chart-section glass-effect-medium" tabindex="17">
+            <div class="chart-title">Spotřeba podle budov</div>
+            <div class="bar-chart">
+                <div class="bar-item">
+                    <span class="bar-label">Budova A</span>
+                    <div class="bar-fill"></div>
+                    <span class="bar-value data-number">847 m³</span>
+                </div>
+
+                <div class="bar-item">
+                    <span class="bar-label">Budova B</span>
+                    <div class="bar-fill"></div>
+                    <span class="bar-value data-number">284 m³</span>
+                </div>
+
+                <div class="bar-item">
+                    <span class="bar-label">Budova C</span>
+                    <div class="bar-fill"></div>
+                    <span class="bar-value data-number">847 m³</span>
+                </div>
+
+                <div class="bar-item">
+                    <span class="bar-label">Budova D</span>
+                    <div class="bar-fill"></div>
+                    <span class="bar-value data-number">284 m³</span>
+                </div>
+
+                <div class="bar-item">
+                    <span class="bar-label">Budova E</span>
+                    <div class="bar-fill"></div>
+                    <span class="bar-value data-number">847 m³</span>
+                </div>
+
+                <div class="bar-item">
+                    <span class="bar-label">Budova F</span>
+                    <div class="bar-fill"></div>
+                    <span class="bar-value data-number">284 m³</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="progress-ring-section" aria-label="Efektivita budov" tabindex="0">
+            <div class="chart-title">Efektivita budov</div>
+            <div class="progress-ring-pozadi">
+                <div class="progress-rings">
+                    <div class="progress-ring">
+                        <div class="ring"></div>
+                        <span class="percent data-number">92%</span>
+                        <div class="label">EXCELLENT</div>
+                    </div>
+
+                    <div class="progress-ring">
+                        <div class="ring"></div>
+                        <span class="percent data-number">87%</span>
+                        <div class="label">GOOD</div>
+                    </div>
+
+                    <div class="progress-ring">
+                        <div class="ring"></div>
+                        <span class="percent data-number">73%</span>
+                        <div class="label">AVERAGE</div>
+                    </div>
+
+                    <div class="progress-ring">
+                        <div class="ring"></div>
+                        <span class="percent data-number">67%</span>
+                        <div class="label">NEEDS IMPROVEMENT</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="activity-feed" tabindex="21">
+            <div class="activity-feed-nadpis">
+                <h3>Activity Feed</h3>
+            </div>
+            <ul>
+                <li>Leak B12</li>
+                <li>High A05</li>
+                <li>Normal</li>
+                <li>Update...</li>
+            </ul>
+        </section>
+
+
+        <section class="table-section" tabindex="22">
+            <div class="filter-system">
+                <input type="checkbox" id="filter-toggle" class="filter-toggle" hidden>
+
+                <label for="filter-toggle" class="filter-trigger" tabindex="23">                    
+                </label>
+
+                <div class="filter-dropdown" id="filter-dropdown">
+                    <div class="filter-group">
+                        <h4>Spotřeba</h4>
+                        <label><input tabindex="24" type="checkbox" name="consumption" value="low"> Nízká (0-50L)</label>
+                        <label><input tabindex="25" type="checkbox" name="consumption" value="medium"> Střední (50-70L)</label>
+                        <label><input tabindex="26" type="checkbox" name="consumption" value="high"> Vysoká (70L+)</label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Efektivita</h4>
+                        <label><input tabindex="27" type="checkbox" name="efficiency" value="excellent"> Výborná (90%+)</label>
+                        <label><input tabindex="28" type="checkbox" name="efficiency" value="good"> Dobrá (80-90%)</label>
+                        <label><input tabindex="29" type="checkbox" name="efficiency" value="poor"> Slabá (80%)</label>
+                    </div>
+
+                    <div class="filter-actions">
+                        <button tabindex="30" type="button" class="btn-apply">Použít filtry</button>
+                        <button tabindex="31" type="button" class="btn-reset">Vymazat</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-nadpis">
+                Ranking bytů
+            </div>
+            <div class="table-container">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="rank">
+                                    Rank
+                                    <span>⬍</span>
+                                </th>
+                                <th class="apartment">
+                                    Apartment
+                                    <span>▼</span>
+                                </th>
+                                <th class="score">
+                                    Score
+                                    <span>⬍</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="data-number">1</td>
+                                <td>Apartmán A</td>
+                                <td class="data-number">95</td>
+                            </tr>
+                            <tr>
+                                <td class="data-number">2</td>
+                                <td>Apartmán B</td>
+                                <td class="data-number">90</td>
+                            </tr>
+                            <tr>
+                                <td class="data-number">3</td>
+                                <td>Apartmán C</td>
+                                <td class="data-number">88</td>
+                            </tr>
+                            <tr>
+                                <td class="data-number">4</td>
+                                <td>Apartmán D</td>
+                                <td class="data-number">75</td>
+                            </tr>
+                            <tr>
+                                <td class="data-number">5</td>
+                                <td>Apartmán E</td>
+                                <td>75</td>
+                            </tr>
+                            <tr>
+                                <td class="data-number">6</td>
+                                <td>Apartmán F</td>
+                                <td class="data-number">75</td>
+                            </tr>
+                            <tr>
+                                <td class="data-number">7</td>
+                                <td>Apartmán G</td>
+                                <td class="data-number">75</td>
+                            </tr>
+                            <tr>
+                                <td class="data-number">8</td>
+                                <td>Apartmán H</td>
+                                <td class="data-number">75</td>
+                            </tr>
+                            <tr>
+                                <td class="data-number">9</td>
+                                <td>Apartmán CH</td>
+                                <td class="data-number">75</td>
+                            </tr>
+                            <tr>
+                                <td class="data-number">10</td>
+                                <td>Apartmán I</td>
+                                <td class="data-number">⚠</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Mobilní verze karet -->
+                <div class="apartment-data" data-layout="cards">
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán A</h3>
+                            <span class="status-badge success" aria-label="Výborná">✓ Výborná</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 1</div>
+                            <div class="data-number"><strong>Score:</strong> 95</div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán B</h3>
+                            <span class="status-badge good" aria-label="Dobrá">✓ Dobrá</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 2</div>
+                            <div class="data-number"><strong>Score:</strong> 90</div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán C</h3>
+                            <span class="status-badge good" aria-label="Dobrá">✓ Dobrá</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 3</div>
+                            <div class="data-number"><strong>Score:</strong> 88</div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán D</h3>
+                            <span class="status-badge good" aria-label="Dobrá">✓ Dobrá</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 4</div>
+                            <div class="data-number"><strong>Score:</strong> 75</div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán E</h3>
+                            <span class="status-badge good" aria-label="Dobrá">✓ Dobrá</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 5</div>
+                            <div class="data-number"><strong>Score:</strong> 75</div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán F</h3>
+                            <span class="status-badge good" aria-label="Dobrá">✓ Dobrá</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 6</div>
+                            <div class="data-number"><strong>Score:</strong> 75</div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán G</h3>
+                            <span class="status-badge good" aria-label="Dobrá">✓ Dobrá</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 7</div>
+                            <div class="data-number"><strong>Score:</strong> 75</div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán H</h3>
+                            <span class="status-badge good" aria-label="Dobrá">✓ Dobrá</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 8</div>
+                            <div class="data-number"><strong>Score:</strong> 75</div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán CH</h3>
+                            <span class="status-badge good" aria-label="Dobrá">✓ Dobrá</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 9</div>
+                            <div class="data-number"><strong>Score:</strong> 75</div>
+                        </div>
+                    </div>
+
+                    <div class="apartment-card">
+                        <div class="card-header">
+                            <h3>Apartmán I</h3>
+                            <span class="status-badge danger" aria-label="Upozornění">⚠ Upozornění</span>
+                        </div>
+                        <div class="card-metrics">
+                            <div class="data-number"><strong>Rank:</strong> 10</div>
+                            <div class="data-number"><strong>Score:</strong> ⚠</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="footer  frosted-footer">
+            <div class="footer-time btn__icon--top data-number">
+                Last update: 11.06.2025 04:15
+            </div>
+            <!-- Tlačítko -->
+            <a tabindex="32" class="btn btn--sm btn--warning btn__icon--top btn__icon--bottom" href="#nahlasit-problem">
+                ⚠ Nahlásit problém ⚠
+            </a>
+        </footer>
+    </div>
+    <!-- Formulář pro nahlášení problému -->
+    <div id="nahlasit-problem" class="modal-container">
+
+        <a href="#" class="problem-pozadi"></a>
+
+        <div class="problem-formular">
+            <a href="#" class="close-btn">&times;</a>
+            <h2>Nahlásit problém</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Váš e-mail:</label>
+                    <input type="email" id="email" autocomplete="email" placeholder="váš@email.cz" required>
+                </div>
+                <div class="form-group">
+                    <label for="popis-problemu">Popis problému:</label>
+                    <textarea id="popis-problemu" rows="4" required></textarea>
+                </div>
+                <div class="modal-btn">
+                    <button type="submit" class="btn btn--primary">Odeslat</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

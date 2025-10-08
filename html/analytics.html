@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analýza vzdálených Analytika</title>
+    <link rel="stylesheet" href="/conection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/js.js"></script>
+    <meta name="description" content="Přehledový dashboard spotřeby vody s analytickými nástroji">
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" class="sidebar-roler" tabindex="0"></label>
+
+
+    <input type="checkbox" id="dark-mode-toggle">
+    <label for="dark-mode-toggle" class="theme-switcher" tabindex="10"></label>
+
+
+    <div class="skeleton-loading gpu-accelerated" aria-hidden="true">
+        <div class="skeleton-line" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+    </div>
+
+    <aside class="sidebar" aria-label="Hlavní navigace">
+        <nav class="navigation-sidebar" aria-label="Hlavni-menu">
+            <ul>
+                <li>
+                    <a href="index.html" aria-current="page" tabindex="1">
+                        <span class="sidebar-icon" aria-hidden="true">📊</span>
+                        <span class="sidebar-text">Nástěnka</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="analytics.html" tabindex="2">
+                        <span class="sidebar-icon">📈</span>
+                        <span class="sidebar-text">Analytika</span>
+                    </a>
+                    <ol class="submenu">
+                        <li>
+                            <a href="#Consuption" tabindex="3">Spotřeba</a>
+                        </li>
+                        <li>
+                            <a href="#Effeciency" tabindex="4">Účinnost</a>
+                        </li>
+                        <li>
+                            <a href="#Trends" tabindex="5">Trendy</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="reports.html" tabindex="6">
+                        <span class="sidebar-icon">📋</span>
+                        <span class="sidebar-text">Zprávy</span>
+                    </a>
+                    <ol class="submenu">
+                        <li>
+                            <a href="#Monthly" tabindex="7">Měsíční</a>
+                        </li>
+                        <li>
+                            <a href="#Annual" tabindex="8">Každoročně</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="settings.html" tabindex="9">
+                        <span class="sidebar-icon">⚙️</span>
+                        <span class="sidebar-text">Nastavení</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+
+    <div class="grid-layout">
+
+
+        <header class="header" role="banner">
+            <div class="logo" aria-label="Remote readings analytics  - hlavní logo">
+                Analýza vzdálených odečtů
+            </div>
+            <nav class="navigation" aria-label="Uživatelské menu">
+                <ul>
+                    <li class="navigation-user"><a href="users.html" tabindex="11">[Uživatel]</a></li>
+                    <li class="navigation-settings"><a href="settings.html" tabindex="12">[Nastavení]</a></li>
+                    <li class="navigation-help"><a href="help.html" tabindex="13">[Pomoc]</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main class="main" role="main" id="main-content">
+ <section class="graf-section glass-card glass-effect-medium" tabindex="19">
+            <div class="graf-nadpis">
+                Spotřeba - 12 měsíců
+            </div>
+            <div class="graf__position">
+                <!-- Sloupce grafu -->
+                <div class="leden-graf">
+                    <div class="graf-procenta">100%</div>
+                </div>
+                <div class="unor-graf">
+                    <div class="graf-procenta">30%</div>
+                </div>
+                <div class="brezen-graf">
+                    <div class="graf-procenta">40%</div>
+                </div>
+                <div class="duben-graf">
+                    <div class="graf-procenta">60%</div>
+                </div>
+                <div class="kveten-graf">
+                    <div class="graf-procenta">50%</div>
+                </div>
+                <div class="cerven-graf">
+                    <div class="graf-procenta">70%</div>
+                </div>
+                <div class="cervenec-graf">
+                    <div class="graf-procenta">80%</div>
+                </div>
+                <div class="srpen-graf">
+                    <div class="graf-procenta">80%</div>
+                </div>
+                <div class="zari-graf">
+                    <div class="graf-procenta">10%</div>
+                </div>
+                <div class="rijen-graf">
+                    <div class="graf-procenta">20%</div>
+                </div>
+                <div class="listopad-graf">
+                    <div class="graf-procenta">40%</div>
+                </div>
+                <div class="prosinec-graf">
+                    <div class="graf-procenta">90%</div>
+                </div>
+
+                <!-- Popisky měsíců -->
+                <div class="graf__sloupec__leden">
+                    <div class="graf__popisek">Leden</div>
+                </div>
+                <div class="graf__sloupec__unor">
+                    <div class="graf__popisek">Únor</div>
+                </div>
+                <div class="graf__sloupec__brezen">
+                    <div class="graf__popisek">Březen</div>
+                </div>
+                <div class="graf__sloupec__duben">
+                    <div class="graf__popisek">Duben</div>
+                </div>
+                <div class="graf__sloupec__kveten">
+                    <div class="graf__popisek">Květen</div>
+                </div>
+                <div class="graf__sloupec__cerven">
+                    <div class="graf__popisek">Červen</div>
+                </div>
+                <div class="graf__sloupec__cervenec">
+                    <div class="graf__popisek">Červenec</div>
+                </div>
+                <div class="graf__sloupec__srpen">
+                    <div class="graf__popisek">Srpen</div>
+                </div>
+                <div class="graf__sloupec__zari">
+                    <div class="graf__popisek">Září</div>
+                </div>
+                <div class="graf__sloupec__rijen">
+                    <div class="graf__popisek">Říjen</div>
+                </div>
+                <div class="graf__sloupec__listopad">
+                    <div class="graf__popisek">Listopad</div>
+                </div>
+                <div class="graf__sloupec__prosinec">
+                    <div class="graf__popisek">Prosinec</div>
+                </div>
+            </div>
+        </section>
+
+            <section id="Effeciency" class="progress-ring-section glass-card glass-effect-medium" tabindex="21" aria-label="Efektivita budov">
+                <h2 class="chart-title">Efektivita budov</h2>
+                <div class="progress-ring-pozadi">
+                    <div class="progress-rings">
+                        <div class="progress-ring" style="--progress: 0.92;">
+                        <div class="ring"></div>
+                        <span class="percent data-number">92%</span>
+                        <div class="label">EXCELLENT</div>
+                        </div>
+                        <div class="progress-ring" style="--progress: 0.87;">
+                        <div class="ring"></div>
+                        <span class="percent data-number">87%</span>
+                        <div class="label">GOOD</div>
+                        </div>
+                        <div class="progress-ring" style="--progress: 0.73;">
+                        <div class="ring"></div>
+                        <span class="percent data-number">73%</span>
+                        <div class="label">AVERAGE</div>
+                        </div>
+                        <div class="progress-ring" style="--progress: 0.67;">
+                        <div class="ring"></div>
+                        <span class="percent data-number">67%</span>
+                        <div class="label">NEEDS IMPROVEMENT</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div inert="Trends" class="bar-chart" aria-label="Spotřeba podle budov">
+                    <h3 class="chart-title">Spotřeba podle budov</h3>
+                <div class="bar-item">
+                    <span class="bar-label">Budova A</span>
+                    <div class="bar-fill" style="width: 75%;"></div>
+                    <span class="bar-value data-number">847 m³</span>
+                </div>
+                <div class="bar-item">
+                    <span class="bar-label">Budova B</span>
+                    <div class="bar-fill" style="width: 30%;"></div>
+                    <span class="bar-value data-number">284 m³</span>
+                </div>
+                <div class="bar-item">
+                    <span class="bar-label">Budova C</span>
+                    <div class="bar-fill" style="width: 45%;"></div>
+                    <span class="bar-value data-number">507 m³</span>
+                </div>
+                <!-- další položky budov obdobně -->
+                </div>
+            </section>
+        </main>
+
+
+        <footer class="footer  frosted-footer">
+            <div class="footer-time btn__icon--top data-number">
+                Last update: 11.06.2025 04:15
+            </div>
+            <!-- Tlačítko -->
+            <a tabindex="32" class="btn btn--sm btn--warning btn__icon--top btn__icon--bottom" href="#nahlasit-problem">
+                ⚠ Nahlásit problém ⚠
+            </a>
+        </footer>
+    </div>
+        <!-- Formulář pro nahlášení problému -->
+    <div id="nahlasit-problem" class="modal-container">
+
+        <a href="#" class="problem-pozadi"></a>
+
+        <div class="problem-formular">
+            <a href="#" class="close-btn">&times;</a>
+            <h2>Nahlásit problém</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Váš e-mail:</label>
+                    <input type="email" id="email" autocomplete="email" placeholder="váš@email.cz" required>
+                </div>
+                <div class="form-group">
+                    <label for="popis-problemu">Popis problému:</label>
+                    <textarea id="popis-problemu" rows="4" required></textarea>
+                </div>
+                <div class="modal-btn">
+                    <button type="submit" class="btn btn--primary">Odeslat</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

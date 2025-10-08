@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analýza vzdálených odečtů- Zprávy</title>
+    <link rel="stylesheet" href="/conection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/js.js"></script>
+    <meta name="description" content="Přehledový dashboard spotřeby vody s analytickými nástroji">
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" class="sidebar-roler" tabindex="0"></label>
+
+
+    <input type="checkbox" id="dark-mode-toggle">
+    <label for="dark-mode-toggle" class="theme-switcher" tabindex="10"></label>
+
+
+    <div class="skeleton-loading gpu-accelerated" aria-hidden="true">
+        <div class="skeleton-line" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+    </div>
+
+    <aside class="sidebar" aria-label="Hlavní navigace">
+        <nav class="navigation-sidebar" aria-label="Hlavni-menu">
+            <ul>
+                <li>
+                    <a href="index.html" aria-current="page" tabindex="1">
+                        <span class="sidebar-icon" aria-hidden="true">📊</span>
+                        <span class="sidebar-text">Nástěnka</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="analytics.html" tabindex="2">
+                        <span class="sidebar-icon">📈</span>
+                        <span class="sidebar-text">Analytika</span>
+                    </a>
+                    <ol class="submenu">
+                        <li>
+                            <a href="#Consuption" tabindex="3">Spotřeba</a>
+                        </li>
+                        <li>
+                            <a href="#Effeciency" tabindex="4">Účinnost</a>
+                        </li>
+                        <li>
+                            <a href="#Trends" tabindex="5">Trendy</a>
+                        </li>
+                    </ol>
+                </li>
+                <li class="active">
+                    <a href="reports.html" tabindex="6">
+                        <span class="sidebar-icon">📋</span>
+                        <span class="sidebar-text">Zprávy</span>
+                    </a>
+                    <ol class="submenu">
+                        <li>
+                            <a href="#Monthly" tabindex="7">Měsíční</a>
+                        </li>
+                        <li>
+                            <a href="#Annual" tabindex="8">Každoročně</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="settings.html" tabindex="9">
+                        <span class="sidebar-icon">⚙️</span>
+                        <span class="sidebar-text">Nastavení</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+
+    <div class="grid-layout">
+
+
+        <header class="header" role="banner">
+            <div class="logo" aria-label="Remote readings analytics  - hlavní logo">
+                Analýza vzdálených odečtů
+            </div>
+            <nav class="navigation" aria-label="Uživatelské menu">
+                <ul>
+                    <li class="navigation-user"><a href="users.html" tabindex="11">[Uživatel]</a></li>
+                    <li class="navigation-settings"><a href="settings.html" tabindex="12">[Nastavení]</a></li>
+                    <li class="navigation-help"><a href="help.html" tabindex="13">[Pomoc]</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main class="main" role="main" id="main-content">
+
+
+            <!-- Monthly consumption table -->
+            <section id="Monthly" class="table-section glass-card glass-effect-medium" tabindex="25" aria-label="Měsíční přehled spotřeby a pořadí budov">
+                <h2 class="table-nadpis">Měsíční přehled spotřeby</h2>
+                <table>
+                <thead>
+                    <tr>
+                    <th>Budova</th>
+                    <th>Spotřeba (m³)</th>
+                    <th>Efektivita (%)</th>
+                    <th>Pořadí</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Budova A</td>
+                    <td class="data-number">847</td>
+                    <td>92</td>
+                    <td class="data-number">1</td>
+                    </tr>
+                    <tr>
+                    <td>Budova B</td>
+                    <td class="data-number">284</td>
+                    <td>87</td>
+                    <td class="data-number">2</td>
+                    </tr>
+                    <!-- další řádky tabulky -->
+                </tbody>
+                </table>
+            </section>
+
+            
+            <!-- Summary cards -->
+            <section class="stats-row glass-card glass-effect-medium" tabindex="20" aria-label="Souhrnné klíčové metriky">
+                <div class="stat-card" tabindex="21">
+                <h3>Celková spotřeba</h3>
+                <div class="stat-card__value data-number">28,470 m³</div>
+                <span class="stat-card__change">+15% oproti minulému měsíci</span>
+                </div>
+                <div class="stat-card" tabindex="22">
+                <h3>Průměrná efektivita</h3>
+                <div class="stat-card__value data-number">85%</div>
+                <span class="stat-card__change">Mírný nárůst</span>
+                </div>
+                <div class="stat-card stat-card--danger" tabindex="23">
+                <h3>Upozornění</h3>
+                <div class="stat-card__value data-number">7</div>
+                <span class="stat-card__change stat-card__change--danger">2 nová dnes</span>
+                </div>
+                <div class="stat-card" tabindex="24">
+                <h3>Náklady na spotřebu</h3>
+                <div class="stat-card__value data-number">320,000 Kč</div>
+                <span class="stat-card__change">Stabilní</span>
+                </div>
+            </section>
+
+            <!-- Cost analysis bar charts -->
+            <section class="chart-section glass-card glass-effect-medium" tabindex="26" aria-label="Analýza nákladů a porovnání">
+                <h2 class="chart-title">Analýza nákladů</h2>
+                <div class="bar-chart">
+                    <div class="bar-item">
+                        <span class="bar-label">Budova A</span>
+                        <div class="bar-fill" style="width: 80%;"></div>
+                        <span class="bar-value">150,000 Kč</span>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Budova B</span>
+                        <div class="bar-fill" style="width: 55%;"></div>
+                        <span class="bar-value">140,000 Kč</span>
+                    </div>
+                        <div class="bar-item">
+                        <span class="bar-label">Budova C</span>
+                        <div class="bar-fill" style="width: 55%;"></div>
+                        <span class="bar-value">130,000 Kč</span>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Budova D</span>
+                        <div class="bar-fill" style="width: 55%;"></div>
+                        <span class="bar-value">120,000 Kč</span>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Budova E</span>
+                        <div class="bar-fill" style="width: 55%;"></div>
+                        <span class="bar-value">110,000 Kč</span>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Budova F</span>
+                        <div class="bar-fill" style="width: 55%;"></div>
+                        <span class="bar-value">100,000 Kč</span>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Budova G</span>
+                        <div class="bar-fill" style="width: 55%;"></div>
+                        <span class="bar-value">90,000 Kč</span>
+                    </div>
+                </div>
+
+                <div class="download-buttons" style="margin-top: 1rem; text-align:center;">
+                <button class="btn btn--primary btn--sm" type="button" tabindex="27">Download Report PDF</button>
+                <button class="btn btn--secondary btn--sm" type="button" tabindex="28">Download CSV</button>
+                </div>
+
+                <label class="print-toggle" style="display:block; margin-top: 1rem; text-align:center;">
+                <input type="checkbox" tabindex="29">
+                <span>Print-friendly layout</span>
+                </label>
+            </section>
+        </main>
+
+
+
+        <footer class="footer  frosted-footer">
+            <div class="footer-time btn__icon--top data-number">
+                Last update: 11.06.2025 04:15
+            </div>
+            <!-- Tlačítko -->
+            <a tabindex="32" class="btn btn--sm btn--warning btn__icon--top btn__icon--bottom" href="#nahlasit-problem">
+                ⚠ Nahlásit problém ⚠
+            </a>
+        </footer>
+    </div>
+        <!-- Formulář pro nahlášení problému -->
+    <div id="nahlasit-problem" class="modal-container">
+
+        <a href="#" class="problem-pozadi"></a>
+
+        <div class="problem-formular">
+            <a href="#" class="close-btn">&times;</a>
+            <h2>Nahlásit problém</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Váš e-mail:</label>
+                    <input type="email" id="email" autocomplete="email" placeholder="váš@email.cz" required>
+                </div>
+                <div class="form-group">
+                    <label for="popis-problemu">Popis problému:</label>
+                    <textarea id="popis-problemu" rows="4" required></textarea>
+                </div>
+                <div class="modal-btn">
+                    <button type="submit" class="btn btn--primary">Odeslat</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

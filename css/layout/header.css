@@ -1,0 +1,99 @@
+.header {
+    display: grid;
+    grid-template-areas: 
+    "logo"
+    "navigation";
+    grid-template-columns: 1fr;
+    background-color: var(--blue-600);
+    min-height: 64px;
+    height: auto;
+}
+
+.logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--spacing-2);
+    color: var(--text-light);
+    font-size: var(--font-size-4xl);
+}
+
+.navigation {
+    grid-area: navigation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-2);
+}
+
+.navigation a{
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--blue-500);
+}
+
+.navigation-user:active,
+.navigation-settings:active,
+.navigation-help:active {
+    transform: translateY(3px);
+    transition: all 0.1s ease;
+}
+
+@media (hover: hover) {
+    .navigation a:hover {
+        background-color: var(--blue-800);
+        transition: 0.3s ease;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        height: 68px !important;
+        display: grid;
+        grid-template-areas: 
+        "logo navigation"!important;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: flex-start !important;
+        margin-left: var(--spacing-2);
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: flex-end !important;
+        margin-right: var(--spacing-2);
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        height: 68px !important;
+        display: grid;
+        grid-template-areas: 
+        "logo navigation"!important;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: flex-start !important;
+        margin-left: var(--spacing-2);
+    }
+
+    .navigation {
+        display: flex;
+        justify-content: flex-end !important;
+        margin-right: var(--spacing-2);
+    }
+}

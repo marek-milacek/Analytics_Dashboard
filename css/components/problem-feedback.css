@@ -1,0 +1,83 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal-container:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.problem-pozadi {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.problem-formular {
+    background: var(--text-light);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    z-index: 1001;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-container:target .problem-formular {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.problem-formular .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    border: 2px solid var(--gray-300);
+}
+
+.form-group input:valid,
+.form-group textarea:valid {
+    border-left: 8px solid var(--green-400);
+    background-color: var(--yellow-100);
+}
+
+.form-group input:invalid,
+.form-group textarea:invalid {
+    border-left: 8px solid var(--red-400)!important;
+    border-right: 8px solid var(--red-400)!important;
+    background-color: var(--red-100);
+}
+
+.modal-btn {
+    text-align: center;
+}

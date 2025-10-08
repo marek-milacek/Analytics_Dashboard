@@ -1,0 +1,52 @@
+.heatmap-section {
+    background-color: var(--text-light);
+    border-radius: var(--spacing-2);
+    padding: var(--spacing-6);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: var(--spacing-6);
+    font-family: var(--font-family-sans);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+/* Titulek sekce */
+.heatmap-section h2 {
+    margin-bottom: var(--spacing-4);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Legenda heatmapy */
+.heatmap-legend {
+    display: flex;
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-4);
+    font-size: var(--font-size-base);
+    user-select: none;
+}
+
+.heatmap-legend .legend {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--spacing-1);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+}
+
+/* Barvy legendy podle úrovní */
+.legend.low {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: white;
+}
+
+.legend.medium {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: white;
+}
+
+.legend.high {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+    color: white;
+}

@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--gray-800);
+    color: var(--gray-400);
+    min-height: 44px;
+}
+
+.footer-nazev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

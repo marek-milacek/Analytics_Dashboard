@@ -1,0 +1,32 @@
+.filter-system {
+    position:relative;
+    margin-bottom: var(--spacing-2);
+}
+
+.filter-dropdown {
+    display: none;
+    position: absolute;
+    background: var(--text-light);
+    border: 1px solid var(--text-dark);
+    padding: var(--spacing-2);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+#filter-toggle:checked ~ .filter-dropdown {
+    display: block;
+}
+
+.filter-trigger::before {
+  content: "Filtrovat byty ▲";
+}
+
+#filter-toggle:checked ~ .filter-trigger::before {
+  content: "Filtrovat byty ▼";
+}
+
+@media (max-width: 600px) {
+    .filter-system {
+      display: none;
+    }  
+}

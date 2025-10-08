@@ -1,0 +1,66 @@
+.grid-layout {
+    background-color: var(--gray-200);
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+    z-index: 100;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-areas: "header" "main" "graf-section" "chart-section" "progress-ring-section" "heatmap-section" "activity-feed" "table-section" "footer";
+    grid-template-columns: auto;
+    gap: var(--spacing-4);
+    transition: grid-template-columns 0.3s ease, grid-template-areas 0.3s ease;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.chart-section {
+    grid-area: chart-section;
+}
+
+.progress-ring-section {
+    grid-area: progress-ring-section;
+}
+
+.graf-section {
+    grid-area: graf-section;
+}
+
+.heatmap-section {
+    grid-area: heatmap-section;
+}
+
+.activity-feed {
+    grid-area: activity-feed;
+}
+
+.table-section {
+    grid-area: table-section;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+@media (min-width: 768px) {
+    .grid-layout {
+        display: grid;
+        grid-template-areas: "header header" "main main" "graf-section graf-section" "chart-section chart-section" "progress-ring-section progress-ring-section" "activity-feed activity-feed" "table-section table-section" "footer footer";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-layout {
+        display: grid;
+        grid-template-areas: "header header header header" "main main main main" "graf-section graf-section graf-section graf-section" "chart-section chart-section chart-section chart-section" "progress-ring-section progress-ring-section progress-ring-section progress-ring-section" "activity-feed activity-feed activity-feed activity-feed" "table-section table-section table-section table-section" "footer footer footer footer";
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}

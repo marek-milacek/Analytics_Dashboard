@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analýza vzdálených odečtů - Nastavení</title>
+    <link rel="stylesheet" href="/conection.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/js.js"></script>
+    <meta name="description" content="Přehledový dashboard spotřeby vody s analytickými nástroji">
+</head>
+
+<body>
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" class="sidebar-roler" tabindex="0"></label>
+
+
+    <input type="checkbox" id="dark-mode-toggle">
+    <label for="dark-mode-toggle" class="theme-switcher" tabindex="10"></label>
+
+
+    <div class="skeleton-loading gpu-accelerated" aria-hidden="true">
+        <div class="skeleton-line" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+        <div class="skeleton-line" aria-hidden="true"></div>
+    </div>
+
+    <aside class="sidebar" aria-label="Hlavní navigace">
+        <nav class="navigation-sidebar" aria-label="Hlavni-menu">
+            <ul>
+                <li>
+                    <a href="index.html" aria-current="page" tabindex="1">
+                        <span class="sidebar-icon" aria-hidden="true">📊</span>
+                        <span class="sidebar-text">Nástěnka</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="analytics.html" tabindex="2">
+                        <span class="sidebar-icon">📈</span>
+                        <span class="sidebar-text">Analytika</span>
+                    </a>
+                    <ol class="submenu">
+                        <li>
+                            <a href="#Consuption" tabindex="3">Spotřeba</a>
+                        </li>
+                        <li>
+                            <a href="#Effeciency" tabindex="4">Účinnost</a>
+                        </li>
+                        <li>
+                            <a href="#Trends" tabindex="5">Trendy</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="reports.html" tabindex="6">
+                        <span class="sidebar-icon">📋</span>
+                        <span class="sidebar-text">Zprávy</span>
+                    </a>
+                    <ol class="submenu">
+                        <li>
+                            <a href="#Monthly" tabindex="7">Měsíční</a>
+                        </li>
+                        <li>
+                            <a href="#Annual" tabindex="8">Každoročně</a>
+                        </li>
+                    </ol>
+                </li>
+                <li class="active">
+                    <a href="settings.html" tabindex="9">
+                        <span class="sidebar-icon">⚙️</span>
+                        <span class="sidebar-text">Nastavení</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+
+    <div class="grid-layout">
+
+
+        <header class="header" role="banner">
+            <div class="logo" aria-label="Remote readings analytics  - hlavní logo">
+                Analýza vzdálených odečtů
+            </div>
+            <nav class="navigation" aria-label="Uživatelské menu">
+                <ul>
+                    <li class="navigation-user"><a href="users.html" tabindex="11">[Uživatel]</a></li>
+                    <li class="navigation-settings"><a href="settings.html" tabindex="12">[Nastavení]</a></li>
+                    <li class="navigation-help"><a href="help.html" tabindex="13">[Pomoc]</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main" role="main" id="main-content">
+
+        <section class="settings-section glass-card glass-effect-medium" tabindex="20" aria-label="Nastavení uživatele a aplikace">
+
+            <h2 class="chart-title">Uživatelský profil</h2>
+            <div class="user-profile">
+            <img src="avatar.jpg" alt="Profilový obrázek uživatele" class="avatar" />
+            <div class="user-info">
+                <p><strong>Jméno:</strong> Jan Novák</p>
+                <p><strong>Role:</strong> Administrátor</p>
+            </div>
+            </div>
+
+            <form>
+
+            <fieldset>
+                <legend>Notifikační preference</legend>
+                <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+                Emailové oznámení
+                </label>
+                <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+                SMS upozornění
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Barva motivu</legend>
+                <label for="color-picker">Vyberte barvu:</label>
+                <input type="color" id="color-picker" name="theme-color" value="#3b82f6" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Správa budov</legend>
+                <div class="building-cards">
+                <div class="building-card">
+                    <p>Budova A</p>
+                    <button type="button" class="btn btn--outline">Upravit</button>
+                </div>
+                <div class="building-card">
+                    <p>Budova B</p>
+                    <button type="button" class="btn btn--outline">Upravit</button>
+                </div>
+                <!-- Další karty -->
+                <button type="button" class="btn btn--primary">Přidat novou budovu</button>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Práh výstrah</legend>
+                <label for="threshold-slider">Nastavte prah:</label>
+                <input type="range" id="threshold-slider" name="threshold" min="0" max="100" value="75" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Exportní předvolby</legend>
+                <label><input type="radio" name="file-format" value="pdf" checked> PDF</label>
+                <label><input type="radio" name="file-format" value="csv"> CSV</label>
+                <br />
+                <label for="export-frequency">Frekvence exportu:</label>
+                <select id="export-frequency" name="frequency">
+                <option value="daily">Denně</option>
+                <option value="weekly">Týdně</option>
+                <option value="monthly">Měsíčně</option>
+                </select>
+            </fieldset>
+
+            <div style="margin-top:1rem;">
+                <button type="submit" class="btn btn--primary">Uložit nastavení</button>
+            </div>
+
+            </form>
+        </section>
+
+        </main>
+
+        
+        <footer class="footer  frosted-footer">
+            <div class="footer-time btn__icon--top data-number">
+                Last update: 11.06.2025 04:15
+            </div>
+            <!-- Tlačítko -->
+            <a tabindex="32" class="btn btn--sm btn--warning btn__icon--top btn__icon--bottom" href="#nahlasit-problem">
+                ⚠ Nahlásit problém ⚠
+            </a>
+        </footer>
+    </div>
+        <!-- Formulář pro nahlášení problému -->
+    <div id="nahlasit-problem" class="modal-container">
+
+        <a href="#" class="problem-pozadi"></a>
+
+        <div class="problem-formular">
+            <a href="#" class="close-btn">&times;</a>
+            <h2>Nahlásit problém</h2>
+            <form>
+                <div class="form-group">
+                    <label for="email">Váš e-mail:</label>
+                    <input type="email" id="email" autocomplete="email" placeholder="váš@email.cz" required>
+                </div>
+                <div class="form-group">
+                    <label for="popis-problemu">Popis problému:</label>
+                    <textarea id="popis-problemu" rows="4" required></textarea>
+                </div>
+                <div class="modal-btn">
+                    <button type="submit" class="btn btn--primary">Odeslat</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

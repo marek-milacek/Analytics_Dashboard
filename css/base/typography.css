@@ -1,0 +1,278 @@
+:root {
+    /* --- BAREVNÁ PALETA --- */
+    /* Primary Blue (pro navigaci, odkazy, hlavní akce) */
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-200: #bfdbfe;
+    --blue-300: #93c5fd;
+    --blue-400: #60a5fa;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    /* base */
+    --blue-700: #1d4ed8;
+    --blue-800: #1e40af;
+    --blue-900: #1e3a8a;
+    /* Success Green (pro efektivitu, úspory) */
+    --green-50: #ecfdf5;
+    --green-100: #d1fae5;
+    --green-200: #a7f3d0;
+    --green-300: #6ee7b7;
+    --green-400: #34d399;
+    --green-500: #10b981;
+    /* base */
+    --green-600: #059669;
+    --green-700: #047857;
+    --green-800: #065f46;
+    --green-900: #064e3b;
+    /* Warning Yellow (střední upozornění) */
+    --yellow-50: #fffbeb;
+    --yellow-100: #fef3c7;
+    --yellow-200: #fde68a;
+    --yellow-300: #fcd34d;
+    --yellow-400: #fbbf24;
+    --yellow-500: #f59e0b;
+    /* base */
+    --yellow-600: #d97706;
+    --yellow-700: #b45309;
+    --yellow-800: #92400e;
+    --yellow-900: #78350f;
+    /* Danger Red (kritická upozornění) */
+    --red-50: #fef2f2;
+    --red-100: #fee2e2;
+    --red-200: #fecaca;
+    --red-300: #fca5a5;
+    --red-400: #f87171;
+    --red-500: #ef4444;
+    /* base */
+    --red-600: #dc2626;
+    --red-700: #b91c1c;
+    --red-800: #991b1b;
+    --red-900: #7f1d1d;
+    /* Gray Scale (pozadí, rámečky, disabled stavy) */
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    /* světlé pozadí karet */
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    /* Text kontrast */
+    --text-dark: #111827;
+    --text-light: #ffffff;
+    /* Semantic color aliases */
+    --color-primary: var(--blue-600);
+    --color-success: var(--green-600);
+    --color-warning: var(--yellow-500);
+    --color-danger: var(--red-500);
+    /* --- TYPOGRAFIE --- */
+    /* Font rodiny (2 fonty max, tady jeden pro příklad) */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    --font-display: 'Inter', sans-serif;
+    /* Velikost pisma - Modular scale (1.250 ratio) */
+    --font-size-xs: clamp(0.75rem, 1.5vw, 0.875rem);
+    /* 12-14px */
+    --font-size-sm: clamp(0.875rem, 1.75vw, 1rem);
+    /* 14-16px */
+    --font-size-base: clamp(1rem, 2vw, 1.125rem);
+    /* 16-18px */
+    --font-size-lg: clamp(1.125rem, 2.25vw, 1.25rem);
+    /* 18-20px */
+    --font-size-xl: clamp(1.25rem, 2.5vw, 1.5rem);
+    /* 20-24px */
+    --font-size-2xl: clamp(1.5rem, 3vw, 1.875rem);
+    /* 24-30px */
+    --font-size-3xl: clamp(1.875rem, 3.5vw, 2.25rem);
+    /* 30-36px */
+    --font-size-4xl: clamp(2.25rem, 4vw, 2.5rem);
+    /* 36-40px */
+    --min-fs: 44px;
+    /* Výška řádku */
+    --lh-tight: 1.2;
+    /* na nadpisy */
+    --lh-normal: 1.5;
+    /* na běžný text */
+    --lh-relaxed: 1.75;
+    /* na delší texty */
+    /* Font weights */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    /* --- SPACING SYSTÉM (základní jednotka: 4px (rem equivalent: 0.25rem) */
+    --spacing-px: 1px;
+    --spacing-0: 0;
+    --spacing-1: 0.25rem;
+    /* 4px */
+    --spacing-2: 0.5rem;
+    /* 8px */
+    --spacing-3: 0.75rem;
+    /* 12px */
+    --spacing-4: 1rem;
+    /* 16px */
+    --spacing-5: 1.25rem;
+    /* 20px */
+    --spacing-6: 1.5rem;
+    /* 24px */
+    --spacing-8: 2rem;
+    /* 32px */
+    --spacing-10: 2.5rem;
+    /* 40px */
+    --spacing-12: 3rem;
+    /* 48px */
+    --spacing-16: 4rem;
+    /* 64px */
+    --spacing-20: 5rem;
+    /* 80px */
+    --spacing-24: 6rem;
+    /* 96px */
+    /* Semantic spacing aliases */
+    --space-xs: 8px;
+    --space-sm: 13px;
+    --space-md: 21px;
+    --space-lg: 34px;
+    --space-xl: 55px;
+    /*fluid spacing*/
+    --spacing-fluid-1: clamp(0.25rem, 0.5vw + 0.1rem, 0.5rem);
+    --spacing-fluid-2: clamp(0.5rem, 1vw + 0.25rem, 1rem);
+    --spacing-fluid-4: clamp(1rem, 1.5vw + 0.5rem, 1.5rem);
+    --bp-sidebar-collapse: 1200px;
+    --bp-stats-stack: 900px;
+    --bp-charts-stack: 768px;
+    --bp-table-cards: 600px;
+    --bp-mobile-nav: 480px;
+}
+
+
+/* Utility classes */
+
+.p-4 {
+    padding: var(--spacing-4);
+}
+
+.px-6 {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+}
+
+.mb-8 {
+    margin-bottom: var(--spacing-8);
+}
+
+.gap-4 {
+    gap: var(--spacing-4);
+}
+
+.text-xs {
+    font-size: var(--font-size-xs);
+}
+
+.text-sm {
+    font-size: var(--font-size-sm);
+}
+
+.text-base {
+    font-size: var(--font-size-base);
+}
+
+.text-lg {
+    font-size: var(--font-size-lg);
+}
+
+.font-normal {
+    font-weight: var(--font-weight-normal);
+}
+
+.font-medium {
+    font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+    font-weight: var(--font-weight-semibold);
+}
+
+.font-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+
+/* Nadpisy s barvami dle zadání */
+
+h1 {
+    font-size: var(--font-size-4xl);
+    line-height: var(--lh-tight);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-4);
+    font-family: var(--font-primary);
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+    line-height: var(--lh-tight);
+    font-weight: var(--font-weight-semibold);
+    color: var(--blue-600);
+    margin-bottom: var(--spacing-3);
+    font-family: var(--font-primary);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+    line-height: var(--lh-tight);
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-3);
+    font-family: var(--font-primary);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+    line-height: var(--lh-normal);
+    font-weight: var(--font-weight-medium);
+    color: var(--gray-700);
+    margin-bottom: var(--spacing-2);
+    font-family: var(--font-primary);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+    line-height: var(--lh-normal);
+    font-weight: var(--font-weight-medium);
+    color: var(--gray-500);
+    margin-bottom: var(--spacing-2);
+    font-family: var(--font-family-primary);
+}
+
+h6 {
+    font-size: var(--font-size-base);
+    line-height: var(--lh-normal);
+    font-weight: var(--font-weight-normal);
+    color: var(--gray-400);
+    margin-bottom: var(--spacing-1);
+    font-family: var(--font-primary);
+}
+
+
+/* Speciální status třídy */
+
+.status-success {
+    color: var(--green-500);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-primary);
+}
+
+.status-warning {
+    color: var(--yellow-500);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-primary);
+}
+
+.status-danger {
+    color: var(--red-500);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-primary);
+}
